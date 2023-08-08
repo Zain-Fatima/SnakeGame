@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">      
+</head>
+<body>
+    <div id="gameContainer">
+        <header>
+            <div class="header-content">
+                <h1>Snake Adventures</h1>
+                <img src="logo.png" alt="Game Logo">
+            </div>
+        </header>
+        <div id="gameScreen" style="display: none;">
+            <canvas id="game" width="400" height="400"></canvas>
+            <div id="playerScore"></div>
+        </div>
+        <div id="startScreen">
+            <form id="startForm">
+                <label for="playerName">Enter Your Name: </label><br>
+                <input type="text" id="playerName" required><br>
+                <button type="submit">Start Game</button>
+            </form>
+        </div>
+        <div id="snakePart-0"></div>
+    <div id="snakePart-1"></div>
+    <div id="snakePart-2"></div>
+    <!-- ... (add more segments as needed) ... -->
+    <!-- Add the fruit element -->
+    <div id="fruit"></div>
+        <div id="gameOverScreen" style="display: none;">
+            <h1>Game Over!</h1>
+            <p id="finalScore"></p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

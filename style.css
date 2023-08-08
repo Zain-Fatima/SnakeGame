@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: #007676;
+    color: #fff;
+}
+
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #000;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 255, 0.6);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00a4ef;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+header img {
+    max-width: 80px;
+    margin-left: 10px;
+}
+
+#gameScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s ease;
+    padding: 15px;
+    margin: 20px;
+}
+
+canvas {
+    border: 2px solid #00a4ef;
+    background-color: #000;
+    border-radius: 8px;
+}
+
+#playerScore {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #00a4ef;
+}
+
+#startScreen,
+#gameOverScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#startForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #ff5555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #cc4444;
+}
+
+#gameOverScreen h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ff5555;
+}
+
+#gameOverScreen button {
+    background-color: #ff5555;
+}
+
+#gameOverScreen button:hover {
+    background-color: #cc4444;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header img {
+        max-width: 60px;
+    }
+    #gameScreen,
+    #startScreen,
+    #gameOverScreen {
+        width: 90%;
+    }
+    #playerScore {
+        font-size: 1rem;
+    }
+    #startForm {
+        font-size: 0.8rem;
+    }
+    input[type="text"],
+    button {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    #gameOverScreen h1 {
+        font-size: 2rem;
+    }
+}
+
+.snake-part {
+    background-color: #00FF00; /* Green color for the snake */
+    border: 1px solid #00A800; /* Darker green border */
+    border-radius: 4px;
+    animation: pulse 0.5s infinite alternate; /* Add a simple animation */
+}
+
+.fruit {
+    background-color: #FF0000; 
+    border: 1px solid #A80000; 
+    border-radius: 50%; 
+    animation: bounce 1s infinite alternate; 
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
